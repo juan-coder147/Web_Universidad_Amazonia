@@ -1,0 +1,345 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* El navbar es sticky: scroll-padding evita que tape el título de la sección */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== NAVBAR ===== */
+.custom {
+  --bs-navbar-color: #fff;
+  --bs-navbar-hover-color: #ffc107;
+  --bs-navbar-active-color: #ffc107;
+  background-color: #386641;
+}
+
+.containerLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.imgLogo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* ===== CARRUSEL ===== */
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Capa verde para que el texto se lea sobre la foto */
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(56, 102, 65, .8), rgba(56, 102, 65, .1));
+}
+
+.carousel-caption {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  left: 8%;
+  right: 8%;
+  bottom: 20%;
+  max-width: 640px;
+}
+
+.carousel-caption h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  margin-bottom: 16px;
+}
+
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  z-index: 3;
+}
+
+/* ===== TÍTULO DE SECCIÓN (compartido) ===== */
+.seccion__titulo {
+  color: #386641;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 24px;
+}
+
+/* ===== BOTÓN AMARILLO (compartido) ===== */
+.btn-descarga {
+  display: inline-block;
+  margin-top: 16px;
+  padding: .7rem 1.4rem;
+  background-color: #ffc107;
+  color: #1b1b1b;
+  font-weight: 700;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-descarga:hover {
+  background-color: #8a8884;
+  color: #1b1b1b;
+}
+
+/* ===== EL PROGRAMA ===== */
+.programa {
+  padding: 40px 0;
+}
+
+.dato {
+  border-left: 4px solid #ffc107;
+  padding: .4rem 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dato__etiqueta {
+  font-size: .9rem;
+  color: #686e63;
+}
+
+.dato__valor {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #386641;
+}
+
+/* ===== MISIÓN Y VISIÓN ===== */
+.formacion {
+  padding: 30px 0;
+}
+
+.formacion__titulo {
+  color: #fff;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 32px;
+}
+
+.tarjeta {
+  border: none;
+  border-radius: 18px;
+}
+
+.tarjeta .card-body {
+  padding: 1rem;
+}
+
+.tarjeta__titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tarjeta__texto {
+  color: #1b1b1b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== PERFILES ===== */
+.perfiles {
+  padding: 40px 0;
+}
+
+.perfil {
+  border-top: 4px solid #cfd219;
+  padding-top: 16px;
+}
+
+.perfil__titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.perfil p {
+  line-height: 1.7;
+}
+
+/* ===== PLAN DE ESTUDIOS ===== */
+.plan {
+  background-color: #686e63;
+  padding: 30px 0 40px;
+}
+
+.plan__encabezado {
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.plan__etiqueta {
+  display: inline-block;
+  color: #ffc107;
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.plan__titulo {
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 12px;
+}
+
+.plan__intro {
+  color: rgba(255, 255, 255, .8);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Acordeón */
+.plan .accordion-item {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.plan .accordion-button {
+  font-weight: 700;
+  padding: 1.1rem 1.5rem;
+}
+
+.plan .accordion-button:not(.collapsed) {
+  background-color: #ffc107;
+  color: #1b1b1b;
+  box-shadow: none;
+}
+
+.plan .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.plan__lista {
+  columns: 2;
+  column-gap: 40px;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .plan__lista {
+    columns: 1;
+  }
+}
+
+/* Visor del PDF */
+.visor-pdf {
+  width: 100%;
+  height: 75vh;
+  border: 0;
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+  padding: 40px 0;
+  background-color: #f3f6f1;
+}
+
+.contacto__subtitulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contacto__lista li {
+  margin-bottom: 8px;
+}
+
+.contacto__texto {
+  line-height: 1.7;
+}
+
+.contacto a:not(.btn-descarga) {
+  color: #386641;
+}
+
+/* ===== FOOTER ===== */
+.pie {
+  background-color: #1f3d27;
+  color: #dfe8e1;
+  padding: 3rem 0 1.5rem;
+}
+
+.pie__titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.pie ul li {
+  margin-bottom: 6px;
+}
+
+.pie a {
+  color: #dfe8e1;
+  text-decoration: none;
+}
+
+.pie a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.pie hr {
+  border-color: rgba(255, 255, 255, .25);
+  margin: 2rem 0 1rem;
+}
+
+/* ===== ACCESIBILIDAD ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.programa__enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.perfil p{
+  text-align: justify;
+}
+
+.tarjeta__texto{
+  text-align: justify;
+}
